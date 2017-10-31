@@ -10,14 +10,17 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Tarea1 {
-	
+	//link de la pagina a revisar
 	final static String LINK_PRINCIPAL = "http://www.unsa.edu.pe";
+	//variables globales para el conteo
 	static int con_telefono = 0;
 	static int sin_telefono = 0;
 	
 	public static void main(String[] args) throws InterruptedException {
+		//OperaDriver
 		System.setProperty("webdriver.opera.driver", "C:\\Users\\asus\\OneDrive\\PS\\operadriver_win64\\operadriver.exe");
 		ChromeOptions options = new ChromeOptions();
+		//Ejecutable Opera
 		options.setBinary("C:\\Program Files\\Opera\\launcher.exe");
 		
 		@SuppressWarnings("deprecation")
@@ -37,10 +40,14 @@ public class Tarea1 {
 //		driver.manage().window().maximize();
 		
 		//Ingresar Producción Servicios
+		//Buscar por path a <a id=menu586 > .. </a>
 		web = driver.findElement(By.xpath("//a[@id='menu586']"));
+		//Imprimiendo titulo del elemento
 		System.out.print(web.getAttribute("title").toString() + " ** ");
+		//Moviendo cursor a elemento
 		new Actions(driver).moveToElement(web).perform();
 		
+		//Una pausa de 1 segundo
 		Thread.sleep(1000);
 		//Ingresar Centros Médicos
 		web = driver.findElement(By.xpath("//a[@id='menu587']"));
@@ -67,6 +74,7 @@ public class Tarea1 {
 		jse.executeScript("window.scrollBy(0, 250)");
 		//Click al link Contacto
 		webs = driver.findElements(By.linkText("Contacto"));
+		//Comprobar si hay contacto
 		if (webs.size() == 0) {
 			//Comprobar si hay telefono
 			webs = driver.findElements(By.xpath("//strong[text()='Teléfono']"));

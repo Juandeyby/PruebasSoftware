@@ -46,23 +46,5 @@ public class Tarea2 {
 		System.out.println(webs.get(1).getText());
 		web.click();
 		
-//		((JavascriptExecutor)driver).executeScript(
-//			    "document.getElementsByTagName('header')[0].style='position: absolute;'");
-		
-//		System.out.println(driver.getCurrentUrl());
-//		System.out.println(driver.getPageSource());
-		//Comprobando Telefono Centro Médico Universitario P. P. Díaz
-		//Ingresar pagina principal
-		 
-		
-
-//		driver.manage().window().maximize();
-		
-		//Ingresar Producción Servicios
-//		web = driver.findElement(By.xpath("//a[@id='menu586']"));
-//		System.out.print(web.getAttribute("title").toString() + " ** ");
-//		new Actions(driver).moveToElement(web).perform();
-		
-		
 	}
 }
